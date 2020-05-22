@@ -13,7 +13,7 @@ import java.io.InputStream
 
 class MainActivity : AppCompatActivity() {
 
-    val breedNames: ArrayList<String> = ArrayList()
+    val breedNamesList: ArrayList<String> = ArrayList()
 
     companion object{
         var breedName: String = String()
@@ -40,25 +40,15 @@ class MainActivity : AppCompatActivity() {
 
             while (keys.hasNext()) {
                 val key = keys.next()
-                breedNames.add(key)
-
-                var jsonArray = jsonObj.getJSONArray(key)
-
-                if (jsonArray.length() > 0 ){
-                    println("Subbreed" + jsonObj.getJSONArray(key))
-                }
-
+                breedNamesList.add(key)
             }
 
-            var adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,breedNames)
+            var adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,breedNamesList)
             breed_list_view.adapter = adapter
 
             breed_list_view.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-
-                //Toast.makeText(applicationContext, "SubBreeds"  , Toast.LENGTH_LONG).show()
-
                 val intent = Intent(this@MainActivity,DetailedView::class.java)
-                breedName = breedNames[position]
+                breedName = breedNamesList[position]
                 startActivity(intent)
             }
         }

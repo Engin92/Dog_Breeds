@@ -6,10 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".DetailedView">
 
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:fillViewport="true"
+        tools:ignore="MissingConstraints">
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:layout_height="match_parent"
+        android:textSize="20dp" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
