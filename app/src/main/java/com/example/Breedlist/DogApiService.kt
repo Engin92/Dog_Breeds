@@ -1,11 +1,11 @@
 package com.example.Breedlist
 
-import com.example.Breedlist.response.CurrentBreedResponseItem
+import com.example.Breedlist.network.ConnectivityInterceptor
+import com.example.Breedlist.network.response.CurrentBreedResponseItem
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import kotlinx.coroutines.Deferred
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -24,9 +24,10 @@ interface DogApiService {
         @Query("q") name: String
     ): Deferred<List<CurrentBreedResponseItem>>
 
-
     companion object {
-        operator fun invoke(): DogApiService {
+        operator fun invoke(
+            connectivityInterceptor: ConnectivityInterceptor
+        ): DogApiService {
             val requestInterceptor = Interceptor { chain ->
 
                 val url = chain.request()
@@ -42,6 +43,7 @@ interface DogApiService {
 
             val okHttpClient = OkHttpClient.Builder()
                 .addInterceptor(requestInterceptor)
+                .addInterceptor(connectivityInterceptor)
                 .build()
 
             return Retrofit.Builder()

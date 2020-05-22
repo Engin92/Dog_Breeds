@@ -2,6 +2,10 @@ package com.example.Breedlist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.Observer
+import com.example.Breedlist.network.BreedNetworkDataSource
+import com.example.Breedlist.network.BreedNetworkDataSourceImpl
+import com.example.Breedlist.network.ConnectivityInterceptorImpl
 import kotlinx.android.synthetic.main.activity_detailed_view.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -13,25 +17,28 @@ class DetailedView : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detailed_view)
 
+        val apiService = DogApiService(ConnectivityInterceptorImpl(this.applicationContext!!))
+        val BreedNetworkDataSource = BreedNetworkDataSourceImpl(apiService)
 
-
-        val apiService = DogApiService()
-        GlobalScope.launch(Dispatchers.Main) {
-            val currentBreedResponseItem = apiService.getCurrentBreed(MainActivity.breedName).await()
-
-            for (i in 0 until currentBreedResponseItem.size) {
+        BreedNetworkDataSource.downloadedCurrentBreed.observe(this, Observer {
+            for (i in 0 until it.size) {
                 if (i == 0) {
-                    textView.text = "Name: " + currentBreedResponseItem[i].name + "\n"
+                    textView.text = "Name: " + it[i].name + "\n"
                 } else {
-                    textView.append("Name: " + currentBreedResponseItem[i].name + "\n")
+                    textView.append("Name: " + it[i].name + "\n")
                 }
-                textView.append("Lifespan: " + currentBreedResponseItem[i].lifeSpan + "\n")
-                textView.append("Origin: " + currentBreedResponseItem[i].origin + "\n")
-                textView.append("Temperament: " + currentBreedResponseItem[i].temperament + "\n")
-                textView.append("Weight: " + currentBreedResponseItem[i].weight.metric + "\n")
-                textView.append("Height: " + currentBreedResponseItem[i].height.metric + "\n")
+                textView.append("Lifespan: " + it[i].lifeSpan + "\n")
+                textView.append("Origin: " + it[i].origin + "\n")
+                textView.append("Temperament: " + it[i].temperament + "\n")
+                textView.append("Weight: " + it[i].weight.metric + "\n")
+                textView.append("Height: " + it[i].height.metric + "\n")
                 textView.append("\n")
             }
+        }
+        )
+
+        GlobalScope.launch(Dispatchers.Main) {
+            BreedNetworkDataSource.fetchCurrentBreed(MainActivity.breedName)
         }
     }
 }
