@@ -1,4 +1,4 @@
-package com.example.Breedlist.database.entity
+package com.example.Breedlist.network.response
 
 
 data class Height(

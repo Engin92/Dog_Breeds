@@ -1,8 +1,6 @@
 package com.example.Breedlist.database
 
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.Breedlist.network.response.CurrentBreedResponseItem
 
@@ -14,6 +12,9 @@ import com.example.Breedlist.network.response.CurrentBreedResponseItem
 abstract class BreedDatabase : RoomDatabase() {
     abstract fun currentBreedDao(): CurrentBreedDao
 
+}
+    /*
+    //RoomViewModelKotlinSample
     companion object {
         @Volatile private var instance: BreedDatabase? = null
         private val LOCK = Any()
@@ -27,4 +28,5 @@ abstract class BreedDatabase : RoomDatabase() {
                 BreedDatabase::class.java, "breed.db")
                 .build()
     }
-}
+
+     */

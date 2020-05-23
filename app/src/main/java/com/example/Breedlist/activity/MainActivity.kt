@@ -1,10 +1,11 @@
-package com.example.Breedlist
+package com.example.Breedlist.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import com.example.Breedlist.R
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
 import java.io.IOException
@@ -28,13 +29,13 @@ class MainActivity : AppCompatActivity() {
 
     fun read_json()
     {
-        var json: String? = null
+        var json: String?
 
         try {
             val inputStream: InputStream = assets.open("breeds.json")
             json = inputStream.bufferedReader().use{it.readText()}
 
-            var jsonObj = JSONObject(json).getJSONObject("message")
+            val jsonObj = JSONObject(json).getJSONObject("message")
 
             val keys: Iterator<String> = jsonObj.keys()
 
@@ -43,11 +44,12 @@ class MainActivity : AppCompatActivity() {
                 breedNamesList.add(key)
             }
 
-            var adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,breedNamesList)
+            val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,breedNamesList)
             breed_list_view.adapter = adapter
 
             breed_list_view.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-                val intent = Intent(this@MainActivity,DetailedView::class.java)
+                val intent = Intent(this@MainActivity,
+                    DetailedViewActivity::class.java)
                 breedName = breedNamesList[position]
                 startActivity(intent)
             }
