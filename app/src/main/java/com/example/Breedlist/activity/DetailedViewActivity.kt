@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -26,7 +27,7 @@ class DetailedViewActivity : AppCompatActivity() {
 
         breedRecyclerView = findViewById(R.id.breedRecyclerView)
 
-        detailedViewActivityViewModel = ViewModelProviders.of(this).get(
+        detailedViewActivityViewModel = ViewModelProvider(this).get(
             DetailedViewActivityViewModel::class.java)
 
 
