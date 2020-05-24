@@ -1,10 +1,13 @@
 package Dog_Breeds.data.activity
 
 import Dog_Breeds.data.R
+import Dog_Breeds.data.view.RoomViewModel
 import android.content.Intent
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
@@ -25,7 +28,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         read_json()
+
+        val button = findViewById<Button>(R.id.button)
+        button.setOnClickListener {
+            Toast.makeText(this,"Cache Deleted!", Toast.LENGTH_LONG).show()
+                Thread(Runnable {
+                    RoomViewModel.database!!.currentBreedDao().deleteAllBreeds()
+                }).start()
+        }
     }
+
 
     fun read_json()
     {

@@ -1,11 +1,8 @@
 package Dog_Breeds.data.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
 import Dog_Breeds.data.network.response.CurrentBreedResponseItem
+import androidx.room.*
 
 @Dao
 interface CurrentBreedDao {
@@ -14,7 +11,7 @@ interface CurrentBreedDao {
     fun getAllBreeds() : LiveData<List<CurrentBreedResponseItem>>
 
     @Query("SELECT * FROM breeds WHERE name IN (:name)")
-    fun getBreedByName(name: String): List<CurrentBreedResponseItem>
+    fun getBreedByName(name: String): LiveData<List<CurrentBreedResponseItem>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAllBreeds(breedList: List<CurrentBreedResponseItem>)

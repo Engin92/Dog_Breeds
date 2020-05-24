@@ -19,8 +19,9 @@ class DetailedViewActivityRepository{
 
     fun getBreeds() : LiveData<List<CurrentBreedResponseItem>>
     {
-        return RoomViewModel.database!!.currentBreedDao().getAllBreeds()
+        return RoomViewModel.database!!.currentBreedDao().getBreedByName(MainActivity.breedName)
     }
+
 
     fun ApiCallAndPutInDB()
     {
@@ -45,7 +46,6 @@ class DetailedViewActivityRepository{
                 {
                     200 ->{
                         Thread(Runnable {
-                            RoomViewModel.database!!.currentBreedDao().deleteAllBreeds()
                             RoomViewModel.database!!.currentBreedDao().insertAllBreeds(response.body()!!)
                         }).start()
                     }
