@@ -1,6 +1,7 @@
 package com.example.Breedlist.view
 
 import android.app.Application
+import android.util.Log
 import androidx.room.Room
 import com.example.Breedlist.database.BreedDatabase
 

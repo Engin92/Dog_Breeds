@@ -2,187 +2,49 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="10dp"
-    android:weightSum="10">
+>
 
     <TextView
+        android:id="@+id/breed_id"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:background="@color/colorPrimaryDark"
-        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"/>
+
+    <TextView
         android:id="@+id/breed_name"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"/>
-    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:background="@color/colorPrimaryDark"
-        android:layout_weight="1.25">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="#f1a9a9" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:gravity="center"
-            android:id="@+id/breed_id"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"/>
-    </LinearLayout>
-    <LinearLayout
+        android:layout_height="wrap_content"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/breed_bred_for"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:background="@color/colorPrimaryDark"
-        android:layout_weight="1.25">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="#f1a9a9" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:gravity="center"
-            android:id="@+id/breed_origin"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"/>
-    </LinearLayout>
-    <LinearLayout
+        android:layout_height="wrap_content"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/breed_life_span"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:background="@color/colorPrimaryDark"
-        android:layout_weight="1.25">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="#f1a9a9" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:gravity="center"
-            android:id="@+id/breed_bred_for"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"/>
-    </LinearLayout>
-    <LinearLayout
+        android:layout_height="wrap_content"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/breed_temperament"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:background="@color/colorPrimaryDark"
-        android:layout_weight="1.25">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="#f1a9a9" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:gravity="center"
-            android:id="@+id/breed_life_span"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"/>
-    </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:background="@color/colorPrimaryDark"
-            android:layout_weight="1.25">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textColor="#f1a9a9" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:gravity="center"
-                android:id="@+id/breed_temperament"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"/>
-        </LinearLayout>
-    <LinearLayout
+        android:layout_height="wrap_content"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/breed_height"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:background="@color/colorPrimaryDark"
-        android:layout_weight="1.25">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="#f1a9a9" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:gravity="center"
-            android:id="@+id/breed_height"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"/>
-    </LinearLayout>
-    <LinearLayout
+        android:layout_height="wrap_content"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/breed_weight"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:background="@color/colorPrimaryDark"
-        android:layout_weight="1.25">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="#f1a9a9" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:gravity="center"
-            android:id="@+id/breed_weight"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"/>
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:textSize="20sp"/>
 </LinearLayout>

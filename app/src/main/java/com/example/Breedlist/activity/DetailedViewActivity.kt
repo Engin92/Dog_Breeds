@@ -39,10 +39,11 @@ class DetailedViewActivity : AppCompatActivity() {
             Toast.makeText(this,"No internet connection. Showing cached list!",Toast.LENGTH_LONG).show()
         }
 
-        detailedViewActivityViewModel.getAllBreedList().observe(this, Observer<List<CurrentBreedResponseItem>> { breedList ->
+            detailedViewActivityViewModel.getAllBreedList().observe(this, Observer<List<CurrentBreedResponseItem>> { breedList ->
             Log.e(MainActivity::class.java.simpleName,breedList.toString())
             setUpBreedRecyclerView(breedList!!)
         })
+
     }
 
     fun isOnline(context: Context): Boolean {
@@ -72,7 +73,7 @@ class DetailedViewActivity : AppCompatActivity() {
         val breedRecyclerViewAdapter =
             BreedRecyclerViewAdapter(this, breeds)
         breedRecyclerView.adapter = breedRecyclerViewAdapter
-        breedRecyclerView.layoutManager = GridLayoutManager(this,2)
+        breedRecyclerView.layoutManager = GridLayoutManager(this,1)
         breedRecyclerView.setHasFixedSize(true)
     }
 }

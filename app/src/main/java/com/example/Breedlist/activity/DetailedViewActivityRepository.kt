@@ -17,7 +17,6 @@ class DetailedViewActivityRepository{
     val BASE_URL = "https://api.thedogapi.com/v1/breeds/"
     val TAG = DetailedViewActivityRepository::class.java.simpleName
 
-
     fun getBreeds() : LiveData<List<CurrentBreedResponseItem>>
     {
         return RoomViewModel.database!!.currentBreedDao().getAllBreeds()
@@ -40,7 +39,6 @@ class DetailedViewActivityRepository{
             }
 
             override fun onResponse(call: Call<List<CurrentBreedResponseItem>>?, response: Response<List<CurrentBreedResponseItem>>?) {
-
                 Log.e(TAG,response!!.body().toString())
                 when(response.code())
                 {

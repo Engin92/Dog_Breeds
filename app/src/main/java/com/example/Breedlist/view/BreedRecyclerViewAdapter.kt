@@ -27,21 +27,19 @@ class BreedRecyclerViewAdapter (_context : Context, _breedlist:List<CurrentBreed
 
     override fun onBindViewHolder(holder: BreedViewHolder, position: Int) {
         val breed = breedList[position]
-        holder.breedId.text = breed.id.toString()
-        holder.breedName.text = breed.name
-        holder.breedOrigin.text = breed.origin
-        holder.breedBredFor.text = breed.bredFor
-        holder.breedLifeSpan.text = breed.lifeSpan
-        holder.breedTemperament.text = breed.temperament
-        holder.breedHeight.text = breed.height.imperial
-        holder.breedWeight.text = breed.weight.metric
+        holder.breedId.text = "ID: " + breed.id.toString()
+        holder.breedName.text = "Name: " + breed.name
+        holder.breedBredFor.text = "Bred for: " + breed.bredFor
+        holder.breedLifeSpan.text = "Lifespan: " + breed.lifeSpan
+        holder.breedTemperament.text = "Temperament: " + breed.temperament
+        holder.breedHeight.text = "Height in cm: " + breed.height.metric
+        holder.breedWeight.text = "Weight in cm: " + breed.weight.metric
     }
 
     class BreedViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
         val breedId : TextView = itemView.findViewById(R.id.breed_id)
         val breedName : TextView = itemView.findViewById(R.id.breed_name)
-        val breedOrigin : TextView = itemView.findViewById(R.id.breed_origin)
         val breedBredFor : TextView = itemView.findViewById(R.id.breed_bred_for)
         val breedLifeSpan : TextView = itemView.findViewById(R.id.breed_life_span)
         val breedTemperament : TextView = itemView.findViewById(R.id.breed_temperament)

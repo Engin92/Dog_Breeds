@@ -1,6 +1,7 @@
 package com.example.Breedlist.network.response
 
 
+import androidx.annotation.Nullable
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -17,7 +18,6 @@ data class CurrentBreedResponseItem(
     val lifeSpan: String,
     @PrimaryKey
     val name: String,
-    val origin: String,
     val temperament: String,
     @Embedded(prefix = "weight_")
     val weight: Weight
