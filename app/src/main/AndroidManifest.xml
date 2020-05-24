@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.Breedlist">
+    package="Dog_Breeds.data">
     
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
 
     <application
-        android:name=".view.RoomViewModel"
+        android:name="Dog_Breeds.data.view.RoomViewModel"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -15,8 +15,8 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name="com.example.Breedlist.activity.DetailedViewActivity"></activity>
-        <activity android:name="com.example.Breedlist.activity.MainActivity">
+        <activity android:name="Dog_Breeds.data.activity.DetailedViewActivity"></activity>
+        <activity android:name="Dog_Breeds.data.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

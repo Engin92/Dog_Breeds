@@ -1,10 +1,10 @@
-package com.example.Breedlist.activity
+package Dog_Breeds.data.activity
 
 import android.util.Log
 import androidx.lifecycle.LiveData
-import com.example.Breedlist.view.RoomViewModel
-import com.example.Breedlist.network.response.CurrentBreedResponseItem
-import com.example.Breedlist.retrofit.RestApi
+import Dog_Breeds.data.view.RoomViewModel
+import Dog_Breeds.data.network.response.CurrentBreedResponseItem
+import Dog_Breeds.data.retrofit.RestApi
 import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
@@ -30,7 +30,8 @@ class DetailedViewActivityRepository{
             .baseUrl(BASE_URL)
             .build()
 
-        val restApi = retrofit.create<RestApi>(RestApi::class.java)
+        val restApi = retrofit.create<RestApi>(
+            RestApi::class.java)
 
         restApi.getAllBreeds(MainActivity.breedName).enqueue(object : Callback<List<CurrentBreedResponseItem>> {
 

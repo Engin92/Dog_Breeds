@@ -1,4 +1,4 @@
-package com.example.Breedlist
+package test
 
 import org.junit.Test
 

@@ -1,9 +1,8 @@
-package com.example.Breedlist.view
+package Dog_Breeds.data.view
 
 import android.app.Application
-import android.util.Log
 import androidx.room.Room
-import com.example.Breedlist.database.BreedDatabase
+import Dog_Breeds.data.database.BreedDatabase
 
 class RoomViewModel : Application() {
 

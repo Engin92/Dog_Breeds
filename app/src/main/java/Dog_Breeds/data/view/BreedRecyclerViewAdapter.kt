@@ -1,13 +1,13 @@
-package com.example.Breedlist.view
+package Dog_Breeds.data.view
 
+import Dog_Breeds.data.R
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.Breedlist.R
-import com.example.Breedlist.network.response.CurrentBreedResponseItem
+import Dog_Breeds.data.network.response.CurrentBreedResponseItem
 
 class BreedRecyclerViewAdapter (_context : Context, _breedlist:List<CurrentBreedResponseItem>) : RecyclerView.Adapter<BreedRecyclerViewAdapter.BreedViewHolder>() {
 

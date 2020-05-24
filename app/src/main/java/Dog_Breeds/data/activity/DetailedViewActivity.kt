@@ -1,5 +1,6 @@
-package com.example.Breedlist.activity
+package Dog_Breeds.data.activity
 
+import Dog_Breeds.data.R
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
@@ -11,9 +12,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.Breedlist.view.BreedRecyclerViewAdapter
-import com.example.Breedlist.R
-import com.example.Breedlist.network.response.CurrentBreedResponseItem
+import Dog_Breeds.data.view.BreedRecyclerViewAdapter
+import Dog_Breeds.data.network.response.CurrentBreedResponseItem
 
 class DetailedViewActivity : AppCompatActivity() {
 

@@ -1,11 +1,11 @@
-package com.example.Breedlist.database
+package Dog_Breeds.data.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.Breedlist.network.response.CurrentBreedResponseItem
+import Dog_Breeds.data.network.response.CurrentBreedResponseItem
 
 @Dao
 interface CurrentBreedDao {

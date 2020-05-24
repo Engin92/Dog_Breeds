@@ -1,16 +1,16 @@
-package com.example.Breedlist.activity
+package Dog_Breeds.data.activity
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.example.Breedlist.activity.DetailedViewActivityRepository
-import com.example.Breedlist.network.response.CurrentBreedResponseItem
+import Dog_Breeds.data.network.response.CurrentBreedResponseItem
 
 class DetailedViewActivityViewModel : ViewModel() {
 
     var detailedViewActivityRepository: DetailedViewActivityRepository
 
     init {
-        detailedViewActivityRepository = DetailedViewActivityRepository()
+        detailedViewActivityRepository =
+            DetailedViewActivityRepository()
     }
 
     fun getBreedsFromAPIAndStore()

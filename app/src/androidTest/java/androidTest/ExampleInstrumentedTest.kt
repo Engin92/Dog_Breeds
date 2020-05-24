@@ -1,4 +1,4 @@
-package com.example.Breedlist
+package androidTest
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

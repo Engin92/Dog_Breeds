@@ -1,6 +1,6 @@
-package com.example.Breedlist.retrofit
+package Dog_Breeds.data.retrofit
 
-import com.example.Breedlist.network.response.CurrentBreedResponseItem
+import Dog_Breeds.data.network.response.CurrentBreedResponseItem
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers

@@ -1,8 +1,8 @@
-package com.example.Breedlist.database
+package Dog_Breeds.data.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.Breedlist.network.response.CurrentBreedResponseItem
+import Dog_Breeds.data.network.response.CurrentBreedResponseItem
 
 
 @Database(

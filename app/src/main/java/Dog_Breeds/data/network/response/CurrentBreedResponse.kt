@@ -1,4 +1,4 @@
-package com.example.Breedlist.network.response
+package Dog_Breeds.data.network.response
 
 
 class CurrentBreedResponse : ArrayList<CurrentBreedResponseItem>()

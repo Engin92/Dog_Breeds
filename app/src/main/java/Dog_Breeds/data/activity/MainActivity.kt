@@ -1,11 +1,11 @@
-package com.example.Breedlist.activity
+package Dog_Breeds.data.activity
 
+import Dog_Breeds.data.R
 import android.content.Intent
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
-import com.example.Breedlist.R
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
 import java.io.IOException
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     fun read_json()
     {
-        var json: String?
+        val json: String?
 
         try {
             val inputStream: InputStream = assets.open("breeds.json")
