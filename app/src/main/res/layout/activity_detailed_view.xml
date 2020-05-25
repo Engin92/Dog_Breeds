@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Dog_Breeds.data.activity.DetailedViewActivity">
+    tools:context="Dog_Breeds.data.activity.DetailedViewActivity"
+    android:id="@+id/detailed">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

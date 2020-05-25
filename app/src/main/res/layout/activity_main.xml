@@ -5,13 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="Dog_Breeds.data.activity.MainActivity"
-    android:weightSum="100">
+    android:weightSum="100"
+    android:id="@+id/main">
 
     <LinearLayout
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
         android:orientation="vertical"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        android:id="@+id/layout"
+        >
     <ListView
         android:id="@+id/breed_list_view"
         android:layout_width="match_parent"

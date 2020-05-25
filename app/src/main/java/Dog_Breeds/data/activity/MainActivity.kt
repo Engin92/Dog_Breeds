@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
-            Toast.makeText(this,"Cache Deleted!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Cache Cleared!", Toast.LENGTH_LONG).show()
                 Thread(Runnable {
                     RoomViewModel.database!!.currentBreedDao().deleteAllBreeds()
                 }).start()
