@@ -5,6 +5,7 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import org.jetbrains.annotations.NotNull
 
 @Entity(tableName = "Breeds")
 data class CurrentBreedResponseItem(
@@ -12,6 +13,7 @@ data class CurrentBreedResponseItem(
     val bredFor: String?,
     @Embedded(prefix = "height_")
     val height: Height,
+    @NotNull
     val id: Int,
     @SerializedName("life_span")
     val lifeSpan: String?,

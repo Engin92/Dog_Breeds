@@ -18,13 +18,13 @@ internal class HeightTest {
 
 
     @Test
-    fun test_convertAndCheckAllHeights(){
-        InchesToCentimeterConverter (imperialHeightMin,metricHeightMin)
-        InchesToCentimeterConverter (imperialHeightMax, metricHeightMax)
+    fun test_convertAndCheckAllHeights() {
+        InchesToCentimeterConverter(imperialHeightMin, metricHeightMin)
+        InchesToCentimeterConverter(imperialHeightMax, metricHeightMax)
         println("success!")
     }
 
-    fun InchesToCentimeterConverter (imperial : Double?, metric : Double?){
+    fun InchesToCentimeterConverter(imperial: Double?, metric: Double?) {
         var imperialInMetric = (imperial?.times(2.54))
         assertEquals(imperialInMetric, metric)
     }

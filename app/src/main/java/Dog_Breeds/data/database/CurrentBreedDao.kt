@@ -19,4 +19,10 @@ interface CurrentBreedDao {
     @Query("DELETE FROM breeds")
     fun deleteAllBreeds()
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertBreed(breedList: CurrentBreedResponseItem)
+
+    @Query("SELECT * FROM breeds")
+    fun getBreed() : LiveData<CurrentBreedResponseItem>
+
 }
