@@ -52,7 +52,7 @@ class MainActivityTestEspresso(){
 
     @Test
     fun test_visibility_layout_listView_button() {
-        onView(withId(R.id.layout)).check(matches(isDisplayed()))
+        onView(withId(R.id.layoutMain)).check(matches(isDisplayed()))
         onView(withId(R.id.breed_list_view)).check(matches(isDisplayed()))
         onView(withId(R.id.button)).check(matches(isDisplayed()))
     }
